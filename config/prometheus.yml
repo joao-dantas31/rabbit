@@ -1,0 +1,31 @@
+global:
+  scrape_interval:     2s
+  evaluation_interval: 2s
+
+rule_files:
+
+
+scrape_configs:
+  - job_name: 'prometheus-docker'
+    static_configs:
+    - targets: ['localhost:9090']
+
+  - job_name: 'rabbitmq'
+    metrics_path: '/metrics'
+    scrape_interval: 2s
+    static_configs:
+      - targets: ['172.17.0.1:8083']
+        labels:
+          service: 'rb1'
+      - targets: ['172.17.0.1:8086']
+        labels:
+          service: 'rb2'
+      - targets: ['172.17.0.1:8089']
+        labels:
+          service: 'rb3'
+
+remote_write:
+  - url: https://prometheus-prod-13-prod-us-east-0.grafana.net/api/prom/push
+    basic_auth:
+      username: 1034285
+      password: eyJrIjoiMWQxNzNjMGEwZTdhZmE1MDk1NTM0ODAxNTljNjI2MzdlZGVmNTRkMiIsIm4iOiJyYWJiaXQiLCJpZCI6ODc2MjQwfQ==

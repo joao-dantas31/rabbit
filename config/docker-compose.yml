@@ -1,0 +1,51 @@
+version: "1.6"
+
+networks:
+  rabbit:
+
+services:
+  rb1: &rabbitmq
+    image: rabbitmq:3.8-management
+    hostname: rabbit-1
+    container_name: rabbit-1
+    networks:
+      - "rabbit"
+    environment:
+      RABBITMQ_CONFIG_FILE: /config/rabbitmq
+      RABBITMQ_ERLANG_COOKIE: rabbit-cluster
+    volumes:
+      - ${PWD}/rabbit-1/:/config/
+    ports:
+      - "8081:5672"
+      - "8082:15672"
+      - "8083:15692"
+
+  rb2:
+    <<: *rabbitmq
+    hostname: rabbit-2
+    container_name: rabbit-2
+    volumes:
+      - ${PWD}/rabbit-2/:/config/
+    ports:
+      - "8084:5672"
+      - "8085:15672"
+      - "8086:15692"
+
+  rb3:
+    <<: *rabbitmq
+    hostname: rabbit-3
+    container_name: rabbit-3
+    volumes:
+      - ${PWD}/rabbit-3/:/config/
+    ports:
+      - "8087:5672"
+      - "8088:15672"
+      - "8089:15692"
+
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - 9090:9090
