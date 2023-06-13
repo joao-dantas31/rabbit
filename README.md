@@ -56,6 +56,7 @@ Adicionalmente alguns argumentos podem ajudar a criar testes mais interessantes,
 | --metrics-prometheus  | Habilita as métricas para o Prometheus                      |
 | --quorum-queue        | Faz com que a fila criada seja do tipo Quorum               |
 | --metrics-tags        | Especifica os tipos das métricas geradas                    |
+| --auto-delete         | Especifica se a fila criada se auto deleta quando inativa   |
 
 Exemplo de comando utilizando todos os argumentos citados:
 
