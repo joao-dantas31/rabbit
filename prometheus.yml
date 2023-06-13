@@ -16,13 +16,13 @@ scrape_configs:
     static_configs:
       - targets: ['172.17.0.1:8083']
         labels:
-          service: 'rb1'
+          service: 'rabbit-1'
       - targets: ['172.17.0.1:8086']
         labels:
-          service: 'rb2'
+          service: 'rabbit-2'
       - targets: ['172.17.0.1:8089']
         labels:
-          service: 'rb3'
+          service: 'rabbit-3'
 
   - job_name: perf-test
     static_configs:
