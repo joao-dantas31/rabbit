@@ -68,4 +68,5 @@ java -jar perf-test-latest.jar --quorum-queue -u "queue-quorum-test" --metrics-p
 - [RabbitMQ - Clustering Guide](https://www.rabbitmq.com/clustering.html)
 - [RabbitMQ - PerfTest](https://perftest.rabbitmq.com/)
 - [RabbitMQ - Prometheus](https://www.rabbitmq.com/prometheus.html)
+- [Grafana - RabbitMQ-Overview](https://grafana.com/grafana/dashboards/10991-rabbitmq-overview/)
 - [HAProxy - Configuração](https://docs.haproxy.org/1.7/configuration.html)
