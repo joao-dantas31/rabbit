@@ -14,7 +14,7 @@ services:
       RABBITMQ_CONFIG_FILE: /config/rabbitmq
       RABBITMQ_ERLANG_COOKIE: rabbit-cluster
     volumes:
-      - ${PWD}/rabbit-1/:/config/
+      - ./rabbit-1/:/config/
     ports:
       - "8083:15692"
 
@@ -23,7 +23,7 @@ services:
     hostname: rabbit-2
     container_name: rabbit-2
     volumes:
-      - ${PWD}/rabbit-2/:/config/
+      - ./rabbit-2/:/config/
     ports:
       - "8086:15692"
 
@@ -32,7 +32,7 @@ services:
     hostname: rabbit-3
     container_name: rabbit-3
     volumes:
-      - ${PWD}/rabbit-3/:/config/
+      - ./rabbit-3/:/config/
     ports:
       - "8089:15692"
 
