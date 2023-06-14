@@ -24,7 +24,7 @@ docker-compose -f docker-compose-infra.yml up -d
 ```
 
 Com isso temos três instancias do Rabbit trabalhando em um cluster, para verificar isso basta acessar o [console](http://localhost:15672). Para fazer 
-o balanceamento das requisições foi utilizado uma instância do HAProxy, que distribui as requisições para as portas `5672` e `15672` para os nós do Rabbit.
+o balanceamento das requisições foi utilizado uma instância do HAProxy, que distribui as requisições das portas `5672` e `15672` para os nós do Rabbit.
 Por fim, temos uma instância do Prometheus para exportar métricas, por padrão as métricas estão sendo exportadas para o meu Grafana, basta trocar as informações
 do campo `remote_write` no arquivo [prometheus.yml](prometheus.yml).
 
