@@ -28,7 +28,7 @@ scrape_configs:
       - targets: ["host.docker.internal:8080"]
 
 remote_write:
-  - url: https://prometheus-prod-13-prod-us-east-0.grafana.net/api/prom/push
+  - url: #Subistituir por suas informações de escrita do Grafana
     basic_auth:
-      username: 1034285
-      password: eyJrIjoiMWQxNzNjMGEwZTdhZmE1MDk1NTM0ODAxNTljNjI2MzdlZGVmNTRkMiIsIm4iOiJyYWJiaXQiLCJpZCI6ODc2MjQwfQ==
+      username:
+      password:
